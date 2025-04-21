@@ -1,7 +1,13 @@
-name: learn-github-actions
-on: [push]
-jobs:
-check-bats-version:
-runs-on: ubuntu-latest
-steps:
-- run: echo "Hello World"
+name: Example Workflow # ワークフローの名前（任意）
+
+on: # トリガーイベントの定義
+  push: # 例: pushイベントでトリガー
+    branches:
+      - main
+
+jobs: # ジョブの定義
+  check-bats-version: # ジョブ名
+    runs-on: ubuntu-latest # 実行環境
+    steps: # ステップの定義
+      - name: Print Hello World # ステップ名（任意）
+        run: echo "Hello World" # 実行するコマンド
